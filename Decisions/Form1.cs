@@ -25,7 +25,16 @@ namespace Decisions
                that requires the user to be 18 or older. Display an
                appropriate message based on the age            
              */
+            double age = Convert.ToDouble(ageInput.Text);
 
+            if(age >= 18)
+            {
+                ageOutput.Text = "You can play the lottery";
+            }
+            else
+            {
+                ageOutput.Text = "You are too young";
+            }
 
         }
 
@@ -41,6 +50,14 @@ namespace Decisions
              *  Sample output for input 120
              *  You gained 140 xp
              */
+            int xp = Convert.ToInt32(xpInput.Text);
+
+            if (xp > 100)
+            {
+                xp = (xp - 100) * 2 + 100;
+            }
+
+            xpOutput.Text = $"You gained {xp} xp";
              
         }
 
@@ -55,6 +72,17 @@ namespace Decisions
                Sample output for inputs 22, 77
                The max value is: 77
             */
+            int num1 = Convert.ToInt16(num1Input.Text);
+            int num2 = Convert.ToInt16(num2Input.Text);
+
+            if(num1 > num2)
+            {
+                maxOutput.Text = $"The max value is {num1}";
+            }
+            else
+            {
+                maxOutput.Text = $"The max value is {num2}";
+            }
         }
 
         private void yearButton_Click(object sender, EventArgs e)
@@ -67,7 +95,16 @@ namespace Decisions
             /// 
             /// Sample output for inputs 2016
             /// 2016 is a leap year
-           
+            int year = Convert.ToInt32(yearInput.Text);
+
+            if (year % 4 == 0)
+            {
+                yearOutput.Text = $"{year} is a leap year";
+            }
+            else
+            {
+                yearOutput.Text = $"{year} is NOT a leap year";
+            }
 
         }
 
